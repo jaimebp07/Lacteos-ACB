@@ -14,8 +14,17 @@ const users = require('./routes/users')
 app.use(users)
 
 app.get('/', (req, res) =>{
-   // res.send('Hola Mundo')
+   /*res.send('Home')*/
+   res.render('index')
 })
+
+
+// 15 d
+app.get('/log_in', (req, res) =>{
+    res.render('log_in')
+ })
+// 15 d
+
 
 app.listen(3000, () => {
     console.log(`¡server OP! en http://localhost:3000`)
