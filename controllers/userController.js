@@ -7,8 +7,6 @@ module.exports.mostrar = (req, res) => {
                 message: 'Error mostrando los usuarios'
             })
         }
-        console.log("USUARIOS"+ users.length)
-       console.log(users)
        return res.render('users', {users:users})
     })
 }
@@ -80,3 +78,35 @@ module.exports.register_user = (req, res) => {
 }
 
 // 15 d
+module.exports.delete = (req, res) => {
+    const id = req.params.id
+    User.findByIdAndDelete(id, (error, user) => {
+        if(error){
+            return res.status(500).json({
+                message: 'Error al eliminar el usuario'
+            })
+        }
+        res.redirect('/users')
+    } )
+}
+
+module.exports.home = (req, res) => {
+    return res.redirect('/')
+}
+
+module.exports.edit = (req, res) => {
+    const id = req.body.id_edit
+    const document = req.body.document_edit
+    const surnames = req.body.apellidos_edit
+    const names = req.body.nombres_edit
+    const email = req.body.email_edit
+    const rol = req.body.rol_edit
+    User.findByIdAndUpdate(id, {document, surnames, names, email, rol}, (error, user) => {
+        if(error) {
+            return res.status(500).json({
+                message: 'Error editando el usuario'
+            })
+        }
+        res.redirect('/users')
+    })
+}

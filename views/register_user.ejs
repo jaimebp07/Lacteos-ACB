@@ -1,55 +1,132 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="css/style.css">
-        <title>Lacteos_ACB</title>
-        <style>
-            .container{
-                max-width: 960px;
-            }
-        </style>
-      </head>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Lacteos_ACB</title>
+    <style type="text/css">
+      .xyz {
+        background-size: auto;
+        text-align: center;
+        padding-top: 100px;
+      }
+      .btn-circle.btn-xl {
+        width: 70px;
+        height: 70px;
+        padding: 10px 16px;
+        border-radius: 35px;
+        font-size: 12px;
+        text-align: center;
+      }
+    </style>
+  </head>
   <body>
-     <div class="shadow-lg pb-3 mb-5 bg-body rounded">
-      <h4>Datos del usuario</h4>
-      <form action="/add" method="POST">
+    
+    <div
+      class="container-fluid"
+      style="padding: 15px 0; background-color: #51406a"
+    >
+      <a
+      href="/users"
+        type="button"
+        class="btn btn-dark btn-circle btn-xl"
+        style="margin: 0 35px"
+      >
+        Back
+      </a>
+      <a href="/home" style="color: white; text-decoration: none;  margin-left: 30px; font-size: 24px; font-weight: 400"
+      >LACTEOS DEL ALTIPLANO CB
+    </a>
+    </div>
+
+
+    <div class="container">
+      <div class="container" style="margin-top: 35px">
+        <label style="font-weight: 500; font-size: 24px"> Registre los siguientes datos para la creacion del usuario</label>
+      </div>
+      <div class="container justify-content-center-center">
+        <form action="/add" method="POST" style="margin-top: 25px">
           <div class="col-md-6">
-              <label for="documento" class="form-label">Documento</label>
-              <input id="documento" name="documento" type="text" class="form-control" required>
-          </div>
-          
-          <div class="col-md-6">
-              <label for="apellidos" class="form-label">Apellidos</label>
-              <input id="apellidos" name="apellidos" type="text" class="form-control" required>
+            <label for="documento" class="form-label">Documento</label>
+            <input
+              id="documento"
+              name="documento"
+              type="text"
+              class="form-control"
+              required
+            />
           </div>
 
           <div class="col-md-6">
-              <label for="nombres" class="form-label">Nombres</label>
-              <input id="nombres" name="nombres" type="text" class="form-control" required>
-          </div>
-          
-          <div class="col-md-6">
-              <label for="email" class="form-label">Correo Electronico</label>
-              <input id="email" name="email" type="text" class="form-control" required>
+            <label for="apellidos" class="form-label">Apellidos</label>
+            <input
+              id="apellidos"
+              name="apellidos"
+              type="text"
+              class="form-control"
+              required
+            />
           </div>
 
           <div class="col-md-6">
-              <label for="rol" class="form-label">Rol</label>
-              <select id="disabledSelect" name="rol" class="form-select">
-                  <option>administrador</option>
-                  <option>conductor</option>
-                  <option>vendedor</option>
-                </select>
+            <label for="nombres" class="form-label">Nombres</label>
+            <input
+              id="nombres"
+              name="nombres"
+              type="text"
+              class="form-control"
+              required
+            />
           </div>
-          <button type="submit" class="w-100 btn btn-guardar btn-lg"> <i class="bi bi-save"></i></button>
-      </form>
-     </div>
-</body>
+
+          <div class="col-md-6">
+            <label for="email" class="form-label">Correo Electronico</label>
+            <input
+              id="email"
+              name="email"
+              type="text"
+              class="form-control"
+              required
+            />
+          </div>
+
+          <div class="col-md-6">
+            <label for="rol" class="form-label">Rol</label>
+            <select id="disabledSelect" name="rol" class="form-select">
+              <option>administrador</option>
+              <option>conductor</option>
+              <option>vendedor</option>
+            </select>
+          </div>
+          <div class="container" style="margin: 15px 0">
+            <button
+              type="submit"
+              class="btn btn-light"
+              style="
+                padding: 7px 35px;
+                background-color: #e5e5e5;
+                color: #51406a;
+              "
+            >
+              Registrar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>

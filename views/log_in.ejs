@@ -1,45 +1,97 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Lacteos_ACB</title>
-    <style>
-        .container{
-            max-width: 960px;
-        }
+    <style type="text/css">
+      .xyz {
+        background-size: auto;
+        text-align: center;
+        padding-top: 100px;
+      }
+      .btn-circle.btn-xl {
+        width: 70px;
+        height: 70px;
+        padding: 10px 16px;
+        border-radius: 35px;
+        font-size: 12px;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
-    <nav class="top_navigator" id="mainNav">
-      <div class="cc">
-          <a class="nombre_empresa_c" href="#page-top">LACTEOS DEL ALTIPLANO C. B.</a>
-      </div>
-  </nav>
-      <h1>INICIAR SESION.</h1>
-      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        
+    <div
+      class="container-fluid"
+      style="padding: 15px 0; background-color: #51406a"
+    >
+
+      <a href="/home" style="color: white; text-decoration: none;  margin-left: 30px; font-size: 24px; font-weight: 400"
+        >LACTEOS DEL ALTIPLANO CB
+      </a>
+    </div>
+    <div
+      class="container-fluid"
+      style="height: 100vh; text-align: center; background-color: white"
+    >
+      <h1 style="padding-top: 80px; padding-bottom: 25px; font-weight: bold">
+        INICIAR SESION
+      </h1>
+      <div class="container" style="max-width: 500px;">
         <form action="/validate" method="POST">
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <!--<input type="email" name="user" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">-->
-            <input type="text" name="user" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            
+          <a>Usuario</a>
+          <div class="form-group" style="margin-bottom: 25px">
+            <input
+              type="text"
+              name="user"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Ingrese el usuario"
+            />
           </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+          <div class="form-group" style="margin-bottom: 25px">
+            <a>Contraseña</a>
+            <input
+              type="password"
+              name="password" 
+              class="form-control"
+              id="exampleInputPassword1"
+              placeholder="Ingrese la contraseña"
+            />
           </div>
-          <button type="submit" class="btn btn-primary">Ingresar</button>
-          
+          <div style="display: grid; grid-template-rows: repeat(2, 1fr)">
+            <a href="wwww.google.com">¿Has olvidado tu contraseña?</a>
+            <div>
+              <button
+                type="submit"
+                class="btn btn-light"
+                style="
+                  padding: 7px 35px;
+                  background-color: #e5e5e5;
+                  color: #51406a;
+                "
+              >
+                Enviar
+              </button>
+            </div>
+          </div>
         </form>
-        <a>Has olvidado tu contraseña</a>
       </div>
-</body>
+    </div>
+  </body>
 </html>
