@@ -1,5 +1,5 @@
  /* Estilos boton GUARDAR */
- .btn-guardar{
+ /*.btn-guardar{
     width: 100%;
     padding: 15px;
     background-color: #20c997;
@@ -20,7 +20,8 @@
 }
 
 .top_navigator{
-    background-color: #51406A ;
+    //background-color: #51406A ;
+    background-color: #d17021 ;
     width: 100%;
     height: 80px;
 }
@@ -30,4 +31,93 @@
 
 .btn_agregar{
 background-position-x: 500px;
+}
+
+.cosauno {
+    margin: 0 35px;
+    color: #d17021;
+    font-size: 4rem;
+    font-weight: 500;
+}*/
+
+
+
+/*.modalTableProducts {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
+
+.modalTableProducts{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-attachment: rgba(0,0,0,5);
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#btn_modalTableProducts:checked ~ .modalTableProducts{
+    opacity: 1;
+    visibility: visible;
+}
+
+.container_modalTableProducts{
+    width: 70%;
+    height: 80%;
+    margin: auto;
+    background: #fff;
+    box-shadow: 1px 7px 25px rgba(0, 0, 0, 6); 
+    transition: all 500ms ease;
+    position: relative;
+    transform: translateY(-30%);
+}
+
+#btn_modalTableProducts:checked ~ .modalTableProducts .container_modalTableProducts{
+	transform: translateY(0%);
+} 
+
+.container_modalTableProducts header{
+    padding: 10px;
+    background: #db8046;
+    color: #fff;
+}
+
+.container_modalTableProducts label{
+    position: absolute;
+    top: 1%;
+    right: 2%;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.contenido{
+	width: 100%;
+	padding: 10px; 
+}
+.contenido h3{
+	margin-bottom: 10px;
+}
+.contenido p{
+	margin-bottom: 7px;
+}
+
+#btn_modalTableProducts{
+    display: none;
+}
+
+.lbl_modalTableProducts{
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
 }

@@ -12,7 +12,6 @@ module.exports.mostrar = (req, res) => {
 }
 
 module.exports.add = (req, res) => {
-    console.log(req.body)
     const user = new User({
         identification_document: req.body.documento,
         surnames: req.body.apellidos,
@@ -32,11 +31,12 @@ module.exports.add = (req, res) => {
     })
 }
 
-
+module.exports.administrator_session = (req, res) => {
+    res.render('administrator_session')
+}
 
 // 15 d
 module.exports.validate = (req, res) => {
-    console.log("Holaaaa log_in")
     User.find({}, (error, users) => {
         if(error) {
             return res.status(500).json({
@@ -49,13 +49,12 @@ module.exports.validate = (req, res) => {
         let session_user;
         users.forEach(function(element) {
             if((element.username == user_name) && (element.password == user_password)){
-                console.log("el usuario es " + element.names);
                 switch (element.role) {
                     case 'administrador':
-                        return res.redirect('/users')
+                        return res.render('administrator_session')
                       break;
                     case 'vendedor':
-                        return res.render('seller_session')
+                        return res.redirect('/product_management')
                       break;
                     case 'conductor':
                         return res.render('driver_session')

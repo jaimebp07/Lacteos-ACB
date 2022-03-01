@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Lacteos_ACB</title>
+        <style>
+            .container{
+                max-width: 960px;
+            }
+        </style>
+       </head>
+<body>
+    
+    <div class="container-fluid" style="padding: 15px 0; background-color: #51406a">
+
+    <a href="/home" style="color: white; text-decoration: none;  margin-left: 30px; font-size: 24px; font-weight: 400">
+      LACTEOS DEL ALTIPLANO CB
+    </a>
+    <a href="#" style="text-decoration: none; color: rgb(248, 244, 244); position:absolute; top:4%; left:60%;"> agregar venta</a>
+    <a href="#" style="text-decoration: none; color: rgb(248, 244, 244); position:absolute; top:4%; left:70%;"> historial de ventas</a>
+    <a href="/log_in" style="text-decoration: none; color: red; position:absolute; top:4%; left:80%;"> Cerrar Sesion</a> 
+  </div>
+
+  
+  <div>
+    <h1>Informacion del cliente</h1>
+    
+  </div>
+
+
+
+
+
+  <table id="tableProducts" class="table mt-4">
+    <thead>
+        <tr>
+            <th style="display: none;">ID</th>
+            <th>ID PRODUCTO</th>
+            <th>NOMBRE PRODUCTO</th>
+            <th>UNIDAD DE MEDIDA</th>
+            <th>CANTIDAD</th>
+            <th>PRECIO</th>
+            <th>ACCIONES</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% products.forEach((product) => { %>
+            <tr>
+                <td style="display: none;"><%= product._id %></td>
+                <td><%= product.id_product %></td>
+                <td><%= product.name_product %></td>
+                <td><%= product.unit_of_measurement %></td>
+                <td><%= product.amount %></td>
+                <td><%= product.price %></td>
+                <td>
+                  <a type="button" class="btnMakeSale btn bi bi-cart3"></a>
+                    
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+  </table>
+
+
+
+<!---->
+
+  <div id="modalMakeSaler" class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #51406a;" >
+          <h5 class="modal-title" id="exampleModalLabel" style="color: #ffffff;" >Seleccion del producto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+  
+
+            <!---->
+
+            <div class="modal-body">
+            <form action="/add_to_sale" method="POST">
+    
+              <input id="id_make_sale_product" name="id_edit_product" type="text" hidden>
+    <!--
+              <div class="mb-3">
+                <label for="id_product_make_sale" class="col-form-label">ID del producto:</label>
+                <input id="id_product_make_sale" name="id_product_make_sale" type="text" class="form-control" id="recipient-name" disabled>
+              </div>
+    -->
+              <div class="col-md-6">
+                <label for="name_product_make_sale" class="form-label">Nombre del producto</label>
+                <input id="name_product_make_sale" name="name_product_make_sale" type="text" class="form-control"  disabled />
+              </div>
+    
+              <div class="col-md-6">
+                <label for="presentation_make_sale" class="form-label">DESCRIPCION</label>
+                <input id="presentation_make_sale" name="presentation_make_sale" type="text" class="form-control"  disabled ></input>
+              </div>
+
+              <div class="col-md-6">
+                <label for="price_product_make_sale" class="form-label">Precio</label>
+                <input id="price_product_make_sale" name="price_product_make_sale" type="text" class="form-control"  disabled ></input>
+              </div>
+    
+              <div class="col-md-6">
+                <label for="price_product_edit" class="form-label">Cantidad</label>
+                <input id="price_product_edit" name="price_product_edit" type="number" class="form-control" min="1" required/>
+              </div>
+
+             <!---->
+              <div class="modal-footer">
+              <button type="submit" style="background-color: #51406a;" class="btn btn-primary">Agregar a la compra</button>
+            </div>
+          </form>
+        </div>
+  
+       
+      </div>
+    </div>
+  </div>
+
+  <!---->
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="js/codeMakeSale.js"></script>
+
+</body>
+</html>

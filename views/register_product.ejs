@@ -41,7 +41,7 @@
       style="padding: 15px 0; background-color: #51406a"
     >
       <a
-      href="/users"
+      href="/seller_session"
         type="button"
         class="btn btn-dark btn-circle btn-xl"
         style="margin: 0 35px"
@@ -53,18 +53,26 @@
     </a>
     </div>
 
-
     <div class="container">
       <div class="container" style="margin-top: 35px">
-        <label style="font-weight: 500; font-size: 24px"> Registre los siguientes datos para la creacion del usuario</label>
+        <label style="font-weight: 500; font-size: 24px"> Registre los siguientes datos para la creacion del producto</label>
       </div>
       <div class="container justify-content-center-center">
-        <form action="/add" method="POST" style="margin-top: 25px">
+        <form action="/add_product" method="POST" style="margin-top: 25px">
           <div class="col-md-6">
-            <label for="documento" class="form-label">Documento</label>
+            <label for="id_product" class="form-label">ID producto</label>
+            <input id="id_product"
+              name="id_product"
+              type="number"
+              class="form-control"
+              required/>
+          </div>
+
+          <div class="col-md-6">
+            <label for="name_product" class="form-label">Nombre del producto</label>
             <input
-              id="documento"
-              name="documento"
+              id="name_product"
+              name="name_product"
               type="text"
               class="form-control"
               required
@@ -72,46 +80,39 @@
           </div>
 
           <div class="col-md-6">
-            <label for="apellidos" class="form-label">Apellidos</label>
-            <input
-              id="apellidos"
-              name="apellidos"
-              type="text"
-              class="form-control"
-              required
-            />
-          </div>
-
-          <div class="col-md-6">
-            <label for="nombres" class="form-label">Nombres</label>
-            <input
-              id="nombres"
-              name="nombres"
-              type="text"
-              class="form-control"
-              required
-            />
-          </div>
-
-          <div class="col-md-6">
-            <label for="email" class="form-label">Correo Electronico</label>
-            <input
-              id="email"
-              name="email"
-              type="text"
-              class="form-control"
-              required
-            />
-          </div>
-
-          <div class="col-md-6">
-            <label for="rol" class="form-label">Rol</label>
-            <select id="disabledSelect" name="rol" class="form-select">
-              <option>administrador</option>
-              <option>conductor</option>
-              <option>vendedor</option>
+            <label for="unit_of_measurement" class="form-label">Unidad de medida</label>
+            <select id="disabledSelect" name="unit_of_measurement" class="form-select">
+              <option>Kilogramos</option>
+              <option>Libras</option>
+              <option>Litros</option>
+              <option>Mililitros</option>
             </select>
           </div>
+
+          <div class="col-md-6">
+            <label for="amount_product" class="form-label">Cantidad</label>
+            <input
+              id="amount_product"
+              name="amount_product"
+              type="number"
+              class="form-control"
+              min="0"
+              required
+            />
+          </div>
+
+          <div class="col-md-6">
+            <label for="price_product" class="form-label">Precio</label>
+            <input
+              id="price_product"
+              name="price_product"
+              type="number"
+              class="form-control"
+              min="0"
+              required
+            />
+          </div>
+
           <div class="container" style="margin: 15px 0">
             <button
               type="submit"

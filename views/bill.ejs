@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/estilos.css">
+    
+    <title>Lacteos_ACB</title>
+    
+</head>
+<body>
+
+    <main>
+
+        <section class="row" >
+            <div class="col" >
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Informacion del cliente</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="" class="row" id="formCabecera">
+                            <div class="form-group col-md-4">
+                                <label for="">Nombre del cliente</label>
+                                <input id="name_client" type="text" class="form-control" placeholder="Nombre">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="">Identificacion nombre del cliente</label>
+                                <input id="document_client" type="number" class="form-control" placeholder="Identificacion">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="row">
+            <section class="column">
+                <div class="row">
+                    <div class="card">
+                        <div class="card-body">
+                            <form class="column" id="formDetalle">
+                                <div class="form-group row-md">
+                                    <input id="input_id" name="input_id" type="text" hidden>
+
+                                    <label for="">PRODUCTO</label>
+                                    <div class="col">
+                                        <input type="text"  id="input_producto" disabled>
+                                        
+                                        <!--<a type="button" for="modalTableProducts" class="btnSearchProduct btn btn-outline-primary bi bi-search"></a>
+                                        -->
+                                        
+                                        <div class="body_modal" id="modal_sales">
+                                            <!--
+                                            -->
+                                            <input type="checkbox" id="btn-modal">
+                                            <label for="btn-modal" class="lbl-modal" id="btn_search_product">Buscar producto</label>
+                                            <div class="modal" >
+                                                <div class="contenedor">
+                                                    <header>¡Seleccione el producto que va a comprar!</header>
+                                                    <label for="btn-modal">X</label>
+                                                    <div class="contenido">
+
+                                                        <table id="tableProducts" class="table mt-4">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th style="display: none;">ID</th>
+                                                                    <th>ID PRODUCTO</th>
+                                                                    <th>NOMBRE PRODUCTO</th>
+                                                                    <th>UNIDAD DE MEDIDA</th>
+                                                                    <th>CANTIDAD</th>
+                                                                    <th>PRECIO</th>
+                                                                    <th>ACCIONES</th>
+                                                                </tr>
+                                                            </thead>
+
+                                                            <tbody>
+                                                                <% products.forEach((product) => { %>
+                                                                    <tr>
+                                                                        <td style="display: none;"><%= product._id %></td>
+                                                                        <td><%= product.id_product %></td>
+                                                                        <td><%= product.name_product %></td>
+                                                                        <td><%= product.unit_of_measurement %></td>
+                                                                        <td><%= product.amount %></td>
+                                                                        <td><%= product.price %></td>
+                                                                        <td style="display: none;"><%= product.stocks %></td>
+                                                                        <td>
+                                                                       <!-- <a href="/see_sale/<%= product._id %>" class="btn_make_sale btn bi bi-cart3"></a>
+                                                                           -->
+                                                                           <a class="btn_make_sale btn bi bi-cart3"></a>
+                                                                        </td>
+                                                                    </tr>
+                                                                <% }) %>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row-md">
+                                    <label for="">DESCRIPCION</label>
+                                    <input type="text"  id="input_descripcion" disabled>
+                                </div>
+                                <div class="form-group row-md">
+                                    <label for="">PRECIO</label>
+                                    <input type="text"  id="input_precio" disabled>
+                                </div>
+                                <div class="form-group row-md">
+                                    <label for="">DISPONIBLES</label>
+                                    <input type="number"  id="input_disponibles" disabled>
+                                </div>
+                                <div class="form-group row-md">
+                                    <label for="">CANTIDAD A COMPRAR</label>
+                                    <input min="1" type="number"  id="input_cantidad">
+                                </div>
+                                <div class="form-group row-md">
+                                    <label for="">PRECIO TOTAL</label>
+                                    <input  type="text"  id="input_precio_total"  disabled>
+                                </div>
+                                
+                                <div class="form-group row-md">
+                                    <button class="btn btn-primary" id="btn_buy_this_product" type="submit">Comprar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="col">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>NOMBRE</th>
+                                <th>DESCRIPCION</th>
+                                <th>UNIDADES</th>
+                                <th>PREC. UNIT.</th>
+                                <th>PREC. TOTAL</th>
+                                <th>ACCIONES</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col">
+                    
+                        <label >Valor Total</label>
+                        <input type="text" id="input_total_compra" disabled> 
+                    
+                        <label >Porcentaje de descuento</label>
+                        <input type="number" id="input_descuento_bill">
+                   
+                        <label for="input_total_compra_descuento" >Valor Con Descuento</label>
+                        <input type="text" id="input_total_compra_descuento" disabled> 
+                            
+                </div>
+                <div class="col">
+                    <form action="/save_the_purchase" method="POST">
+                        <input type="text" id="imput_bill_invisible" name="imput_bill_invisible" hidden>
+                        <button id="save_the_purchase">Finalizar Compra</button>
+                    </form>
+                                        
+                </div>
+            </section>
+        </div>
+    </main>    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="js/bill.js"></script>
+</body>
+</html>

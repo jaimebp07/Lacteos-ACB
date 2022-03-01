@@ -6,6 +6,8 @@ const userController = require('../controllers/userController');
 //Mostrar los usuarios (GET)
 router.get('/users', userController.mostrar)
 
+router.get('/administrator_session', userController.administrator_session)
+
 //Crear un usurio (POST)
 router.post('/add', userController.add)
 
@@ -22,5 +24,6 @@ router.get('/delete/:id', userController.delete)
 router.get('/home', userController.home)
 
 router.post('/edit', userController.edit)
+
 
 module.exports = router
