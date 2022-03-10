@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/estilos.css">
+
+
+    
+    <title>Lacteos_ACB</title>
+    
+</head>
+<body>
+
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+                <h4 class="text-white">Collapsed content</h4>
+                <span class="text-muted">Toggleable via the navbar brand.</span>
+            </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+    </div>
+    <div class="container-fluid" id="header2">
+
+        <!--hacer un div donde meta el titulo y el menu ese-->
+        <a id="back">
+            LACTEOS DEL ALTIPLANO CB
+        </a>
+        <span class="navbar-text text-white col-md-1" id="usuario">
+            <ul>Admin.</ul>
+            <ul>Maria</ul>
+        </span>
+        <button class=" btn-circle" id="close-image"><img
+                src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png"></button>
+    </div>
+
+    <a href="/log_in" id="salir"> Cerrar Sesion</a>
+    <!-- Menu -->
+    <nav class="navbar navbar-expand-lg" id="MenuNav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a class="nav-link" id="usersRegistr" href="#">
+                        Agregar venta</a>
+                </li>
+                <li class="nav-item ">
+                    <!--PONER LA LISTA DE VENTAS-->
+                    <a class="nav-link" id="btnAdd" href="/make_sale">
+                        Registro de ventas</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <section class="row">
+         <div class="col">
+                <div class="card" id="clientest">
+                    <div class="row">
+                        <div class="col-md-3" id="infCli">
+                            <h3 class="card-title light-text" id="infclient">Informacion del cliente</h3>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-md-3 col-form-label" id="clientLabel">
+                                    <label for="">Nombre</label>
+                                </div>
+                                <div class="col">
+                                    <input id="client_data" type="text" class="form-control" placeholder="Nombre">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row mb-2">
+                                <div class="col-md-4 col-form-label" id="clientLabel">
+                                    <label for="">Identificación</label>
+                                </div>
+                                <div class="col">
+                                    <input id="client_data" type="number" class="form-control"
+                                        placeholder="Identificacion">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="row">
+            <section class="col-lg-4">
+                <div class="row">
+                    <div class="card" id="product_datas">
+                        <div class="card-body">
+                            <form class="column" id="formDetalle">
+                                <div class="form-group row-md">
+                                    <input id="input_id" name="input_id" type="text" hidden>
+
+                                    <label for="">Producto</label>
+                                    <div class="col">
+                                        <input type="text"  id="input_producto" disabled>
+                                        
+                                        <!--<a type="button" for="modalTableProducts" class="btnSearchProduct btn btn-outline-primary bi bi-search"></a>
+                                        -->
+                                        
+                                        <div class="body_modal" id="modal_sales">
+                                            <!--
+                                            -->
+                                            <input type="checkbox" id="btn-modal">
+                                            <label for="btn-modal" class="lbl-modal" id="btn_search_product">Buscar producto</label>
+                                            <div class="modal" >
+                                                <div class="contenedor">
+                                                    <header>¡Seleccione el producto que va a comprar!</header>
+                                                    <label for="btn-modal">X</label>
+                                                    <div class="container">
+
+                                                        <table id="tableGeneral" class="table mt-4 table-bordered table-hover">
+                                                            <thead class="thead-dark">
+                                                                <tr>
+                                                                    <th style="display: none;">Id</th>
+                                                                    <th>Id</th>
+                                                                    <th>Nombre</th>
+                                                                    <th>Unidad de medida</th>
+                                                                    <th>Cant.</th>
+                                                                    <th>Precio</th>
+                                                                    <th>Acciones</th>
+                                                                </tr>
+                                                            </thead>
+
+                                                            <tbody>
+                                                                <% products.forEach((product) => { %>
+                                                                    <tr>
+                                                                        <td style="display: none;"><%= product._id %></td>
+                                                                        <td><%= product.id_product %></td>
+                                                                        <td><%= product.name_product %></td>
+                                                                        <td><%= product.unit_of_measurement %></td>
+                                                                        <td><%= product.amount %></td>
+                                                                        <td><%= product.price %></td>
+                                                                        <td style="display: none;"><%= product.stocks %></td>
+                                                                        <td>
+                                                                       <!-- <a href="/see_sale/<%= product._id %>" class="btn_make_sale btn bi bi-cart3"></a>
+                                                                           -->
+                                                                           <a class="btn_make_sale btn bi bi-cart3"></a>
+                                                                        </td>
+                                                                    </tr>
+                                                                <% }) %>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row-md">
+                                    <label for="">Descripcion</label>
+                                    <input type="text" id="input_descripcion" disabled>
+                                </div>
+                                <div class="form-group row-md">
+                                    <label for="">Precio</label>
+                                    <input type="text" id="input_precio" disabled>
+                                </div>
+                                <div class="form-group row-md">
+                                    <label for="">Disponibles</label>
+                                    <input type="number" id="input_disponibles" disabled>
+                                </div>
+                                <div class="form-group row-md">
+                                    <label for="">Cantidad a comprar</label>
+                                    <input min="1" type="number" id="input_cantidad">
+                                </div>
+                                <div class="form-group row-md">
+                                    <label for="">Precio total</label>
+                                    <input type="text" id="input_precio_total" disabled>
+                                </div>
+
+                                <div class="form-group row-md">
+                                    <button class="btn btn-primary bg-dark" id="input_ButtonNorm"
+                                        type="submit">Comprar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--tabla-->
+            <div class="col-lg-8">
+                <section>
+                    <div class="container">
+                        <div class="shadow-lg pb-3 mb-5 bg-body rounded">
+                            <table class="table mt-4 table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Nombre</th>
+                                        <th>Descripcion</th>
+                                        <th>Cant.</th>
+                                        <th>Prec. Unit.</th>
+                                        <th>Prec. Total</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tableBody">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col">
+
+                        <label>Valor Total</label>
+                        <input type="text" id="input_total_compra" disabled>
+
+                        <label>Porcentaje de descuento</label>
+                        <input type="number" id="input_descuento_bill">
+
+                        <label for="input_total_compra_descuento">Valor Con Descuento</label>
+                        <input type="text" id="input_total_compra_descuento" disabled>
+
+                    </div>
+                    <div class="col">
+                        <form action="/save_the_purchase" method="POST">
+                            <input type="text" id="imput_bill_invisible" name="imput_bill_invisible" hidden>
+                            <button id="save_the_purchase">Finalizar Compra</button>
+                        </form>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="js/bill.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,424 @@
+.modalTableProducts{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-attachment: rgba(0,0,0,5);
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+.table{
+    border-color: black;    
+}
+
+#btn_modalTableProducts:checked ~ .modalTableProducts{
+    opacity: 1;
+    visibility: visible;
+}
+
+.container_modalTableProducts{
+    width: 70%;
+    height: 80%;
+    margin: auto;
+    background: #fff;
+    box-shadow: 1px 7px 25px rgba(0, 0, 0, 6); 
+    transition: all 500ms ease;
+    position: relative;
+    transform: translateY(-30%);
+}
+
+#btn_modalTableProducts:checked ~ .modalTableProducts .container_modalTableProducts{
+	transform: translateY(0%);
+} 
+
+.container_modalTableProducts header{
+    padding: 10px;
+    background: #db8046;
+    color: #fff;
+}
+
+.container_modalTableProducts label{
+    position: absolute;
+    top: 1%;
+    right: 2%;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.contenido{
+	width: 100%;
+	padding: 10px; 
+}
+.contenido h3{
+	margin-bottom: 10px;
+}
+.contenido p{
+	margin-bottom: 7px;
+}
+
+#btn_modalTableProducts{
+    display: none;
+}
+
+.lbl_modalTableProducts{
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn{
+    background-color: #e5e5e5; 
+    font-size: 20px;  
+}
+
+.btn-guardar{
+    width: 100%;
+    padding: 15px;
+    background-color: #4D4141;
+    border: 0;
+    box-sizing:border-box;
+    cursor: pointer;
+    font-weight: bolb;
+    font-size: lager;
+    color: #ffffff;
+}
+.btn-guardar:hover,.btn-guardar:active{
+    color: #fff;
+    background-color: #51406a;
+    border-color: #4D4141;
+}
+
+#infCli{
+    background-color: #9B9B9B;
+}
+#close-image{
+    background-color:#51406a; position:absolute; 
+    top:1%;
+     left:86%
+}
+#salir{
+    text-decoration: none; color: red; position:absolute; 
+    top:4%; left:79%;
+}
+#usuario{
+    border-image-outset: 0in;
+     text-decoration: none;
+      position:absolute;
+       top:3%; 
+       left:91%;
+}
+.btn-guardar:focus{
+    box-shadow:0 0 0 3px rgba(121,82,179,0.25)
+}
+
+.top_navigator{
+    background-color: #51406A ;
+    width: 100%;
+    height: 80px;
+}
+
+.btn_agregar{
+background-position-x: 500px;
+}
+
+.body{
+    overflow-x: hidden;
+    margin: 0; padding: 0; width: 100%;
+}
+.btn-group > btn{
+    text-align: center;
+    background-color: black;
+}
+
+/*Desde aqui hay repetidos los estilos de fuente
+**/
+.form-group{
+    overflow-x: hidden;
+    margin-bottom: 10px;
+    width: 100%;
+    font-size:19px;
+}
+#titleInitSes{
+    overflow-x: hidden;
+    width: 100%;
+    font-size:29px;
+    padding-top: 0px; 
+    padding-bottom: 5px;
+    font-weight: bold;
+    height: 100vh;
+    text-align: center;  
+    background-color: white;
+}
+
+/**
+**/
+p{
+          font-size: 3rem;
+          text-align: center;
+          color: #51406a;
+          font-weight: 400;
+        
+}
+
+#despleg{
+width: 100%;
+}
+
+#disabledSelect{
+    width: auto;
+    font-size: 22px;
+    background-color:#d3c1ec;
+}
+
+#alacteos{
+    margin: 0 35px;
+    font-size: 4rem;
+    font-weight: 500;
+    font-size: 80px; 
+    background-color:white;
+}
+.grid{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr)  
+}
+#names{
+    font-size: 29px; 
+}
+#headerMain div > a{
+    padding: 7px 35px;
+    background-color: white;
+    color: #51406a;
+}
+#headerMain div > button{
+    color: #51406a;
+}
+#save_the_purchase{
+    font-style: normal;
+    line-height: 25px;
+    align-items: center;
+    text-align: center;
+    
+    color: #4D4141;
+    background-color: #e5e5e5;
+    font-size: 20px;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    vertical-align: middle;
+    border: 3px solid #543C77;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.25rem;
+}
+
+#ButtonNorm{
+    font-style: normal;
+    font-weight: normal;
+    line-height: 25px;
+    align-items: center;
+    text-align: center;
+    
+    color: #4D4141;
+    background-color: #e5e5e5;
+    font-size: 30px;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-decoration: none;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.25rem;
+}
+#navbarScroll{
+    --bs-scroll-height: 100px;
+}
+#navbarScroll a{
+    --bs-scroll-height: 100px;
+    background-color: #e5e5e5; 
+    font-size: 29px; 
+}
+#imgInit{
+    width: 100%;
+    height: calc(100vh - 230px);
+    margin: 0;
+    background-color: #51406a;
+}
+#btnBack{
+    width: 70px;
+    height: 70px;
+    padding: 0px 0px;
+    border-radius: 35px;
+    font-size: 12px;
+    text-align: center;
+    margin: 0 35px;
+  }
+#image{
+    padding: 0px 0px;
+    border-radius: 35px;
+    font-size: 12px;
+    text-align: center;
+  }
+  #imageLog{
+    margin-left: 30 px;
+    padding: 0px 0px;
+    border-radius: 35px;
+    font-size: 12px;
+    text-align: center;
+  }
+#header2{
+    padding: 15px 0;
+    background-color: #51406A;
+}
+#back{
+    color: white;
+     text-decoration: none;  
+     margin-left: 30px; 
+     font-size: 25px; 
+     font-weight: 400s;
+    margin: 0 35px;
+    font-weight: 500;
+}
+#back, .body, .form-group, #titleInitSes,
+ #closeSesion, .btn, #usuario,#ButtonNorm, .container th, .container td, 
+ #names,#padding, .p, #alacteos, #searchBar, #infCli, .row{
+    font-family: 'Combo', cursive;     
+}
+#client_data{
+    margin-top: 10px;
+    border-radius: 25px;
+}
+#clientest, #client_data{
+    background-color:#EEEEEE;
+}
+#clientLabel{
+    font-size: 23px; 
+    margin-top: 10px;
+}
+#product_datas{
+    background-color:#DDDDDD;
+}
+#infclient{
+    font-size: 25px; 
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#btnAdd {
+    font-size: 23px; 
+    background-color: #51406a;
+    -webkit-text-stroke: 1.5px black;
+    color: white;
+    font-weight:bold;
+    border: none;
+    margin-left: 20px;   
+    font-weight: bold;
+    font-family: sans-serif;
+}
+#padding{
+    width: 100%; height: 100px; background-color: white
+}
+#closeSesion{
+    text-decoration: none; 
+    color: red; 
+    position:absolute;
+    top:4%;
+    left:79%;
+}
+.form-control, #inputText{
+    font-size: 23px; 
+    max-width: 500px;
+}     
+
+#buttonImagesAdmin{
+    background-color: white;
+    border: none;
+    text-align: center;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+#header3{
+    font-size: 23px; 
+    max-width: 500px;
+    margin-left:0px;
+    font-weight: 500; 
+    margin-bottom: 15px;
+}     
+.navbar{
+    font-size: 23px; 
+}
+#MenuNav{
+    font-size: 23px; 
+    background-color: #51406a;
+}
+
+#usersRegistr{
+    color: white;
+    -webkit-text-stroke: 1.2px black;
+    font-weight:bold;
+    border-radius: 1rem;
+    background-color: #604d7c;
+}
+#tabkeUsers{
+    background-color: blue;
+}
+#forgetPass{
+    display: grid; grid-template-rows: repeat(2, 1fr); 
+}
+#searchBar{
+    border-radius: 10rem;
+    border: 1px solid black;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    margin-left: 7px;
+    margin-right: 7px;
+}
+#close-image img {
+    display: block;
+    height: 90px;
+    width: 70px;
+}
+.button {
+    display: inline-block;
+    height: 134px;
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+    width: 104px;
+}
+.container th{
+    text-align: center;
+    font-size: 20px;
+    background-color: #4D4141; 
+    color: whitesmoke;
+}
+
+.container td{
+    text-align: center;
+    font-size: 20px;
+    background-color: #C4C4C4;
+}
+.a{
+    text-decoration: none;
+    background-color:red;
+}
+#usuario{
+    color: white;
+     text-decoration: none;  
+     font-size: 20px; 
+     font-weight: 400s;
+     border-image-outset: 0in; 
+     text-decoration: none; 
+     position:absolute;
+      top:3%; 
+      left:91%;
+}
+/*---*/
+/*---*/
